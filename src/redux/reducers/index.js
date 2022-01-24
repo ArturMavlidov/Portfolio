@@ -1,22 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import aboutReducer from './about';
+import contactReducer from './contact';
+import homeReducer from './home';
+import portfolioReducer from './portfolio';
 
-const initialState = {
-  value: "#000",
-};
+export { aboutReducer, contactReducer, homeReducer, portfolioReducer };
 
-export const visibilitySlice = createSlice({
-  name: "visibility",
-  initialState,
-  reducers: {
-    dark: (state) => {
-      state.value = '#000'
-    },
-    light: (state) => {
-      state.value = '#fff'
-    }
-  }
-});
-
-export const {dark, light} = visibilitySlice.actions;
-
-export default visibilitySlice.reducer;

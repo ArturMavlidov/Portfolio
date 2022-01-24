@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import visibilityReducer from "./reducers";
+import {aboutReducer, contactReducer, homeReducer, portfolioReducer} from "./reducers";
 
 const store = configureStore({
   reducer: {
-    visibility: visibilityReducer,
+    about: aboutReducer,
+    contact: contactReducer,
+    home: homeReducer,
+    portfolio: portfolioReducer
   },
 });
 
