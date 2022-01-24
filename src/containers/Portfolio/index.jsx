@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { memo } from "react";
 
-export default function Portfolio() {
+import styles from "./index.module.scss";
+
+const Portfolio = memo(() => {
   return <div>Portfolio</div>;
-}
+});
+
+export default Portfolio;

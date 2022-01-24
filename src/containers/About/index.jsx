@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { memo } from "react";
 
-export default function About() {
+import styles from "./index.module.scss";
+
+const About = memo(() => {
   return <div>About</div>;
-}
+});
+
+export default About;

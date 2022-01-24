@@ -1,5 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 
-export default function Contact() {
+import styles from "./index.module.scss";
+
+const Contact = memo(() => {
   return <div>Contact</div>;
-}
+});
+
+export default Contact;

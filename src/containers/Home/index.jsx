@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 
-export default function Home() {
-  return (
-    <div>
-      Home
-    </div>
-  );
-}
+import styles from "./index.module.scss";
+
+const Home = memo(() => {
+  return <div>Home</div>;
+});
+
+export default Home;
