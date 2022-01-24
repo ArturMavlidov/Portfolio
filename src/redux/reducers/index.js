@@ -1,26 +1,22 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
-  visibility: "#000",
+  value: "#000",
 };
 
-const visibility = (state = initialState, action) => {
-  switch (action.type) {
-    case 'dark':
-      return {
-        ...state,
-        visibility: "#000",
-      };
-
-    case 'light':
-      return {
-        ...state,
-        visibility: "#fff",
-      };
-
-    default:
-      return state;
+export const visibilitySlice = createSlice({
+  name: "visibility",
+  initialState,
+  reducers: {
+    dark: (state) => {
+      state.value = '#000'
+    },
+    light: (state) => {
+      state.value = '#fff'
+    }
   }
-};
+});
 
-const rootReducer = visibility;
+export const {dark, light} = visibilitySlice.actions;
 
-export default rootReducer;
+export default visibilitySlice.reducer;
