@@ -4,7 +4,7 @@ import { Sidebar } from "./components";
 
 function App() {
   return (
-    <>
+    <div className="container">
       <Router>
         <Sidebar />
         <Routes>
@@ -14,7 +14,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

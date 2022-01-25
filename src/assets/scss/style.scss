@@ -47,3 +47,26 @@ input {
   border: none;
   outline: none;
 }
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1508px;
+  margin: 0 auto;
+}
+
+.page {
+  width: 1058px;
+  height: 792px;
+  padding: 40px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-name {
+  font-size: 24px;
+  line-height: 1.16;
+}

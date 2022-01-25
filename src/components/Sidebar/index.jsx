@@ -1,17 +1,17 @@
-import React from "react";
+import React, {memo} from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import styles from "./index.module.scss";
 import sidebarAvatar from "../../assets/img/sidebarLogo.png";
 
-const Sidebar = () => {
+const Sidebar = memo(() => {
   const { pathname } = useLocation();
   console.log(pathname);
 
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar_avatar}>
-        <img src={sidebarAvatar} alt="" />
+        <img src={sidebarAvatar} alt="Sidebar avatar" />
       </div>
       <div className={styles.sidebar_name}>
         <div>Artur Mavlidov | 18yo</div>
@@ -36,6 +36,6 @@ const Sidebar = () => {
       <span className={styles.sidebar_date}>2022</span>
     </div>
   );
-};
+});
 
 export default Sidebar;
