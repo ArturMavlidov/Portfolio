@@ -18,16 +18,16 @@ const Sidebar = memo(() => {
       </div>
       <nav className={styles.sidebar_nav}>
         <ul>
-          <li className={styles.nav_item} style={pathname === '/' ? {color: '#01A39D'} : null}>
+          <li className={`${styles.nav_item} ${pathname === '/' ? styles.active : null}`}>
             <Link to="/">Home</Link>
           </li>
-          <li className={styles.nav_item} style={pathname === '/about' ? {color: '#01A39D'} : null}>
+          <li className={`${styles.nav_item} ${pathname === '/about' ? styles.active : null}`}>
             <Link to="/about">About</Link>
           </li>
-          <li className={styles.nav_item} style={pathname === '/portfolio' ? {color: '#01A39D'} : null}>
+          <li className={`${styles.nav_item} ${pathname === '/portfolio' ? styles.active : null}`}>
             <Link to="/portfolio">Projects</Link>
           </li>
-          <li className={styles.nav_item} style={pathname === '/contact' ? {color: '#01A39D'} : null}>
+          <li className={`${styles.nav_item} ${pathname === '/contact' ? styles.active : null}`}>
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
