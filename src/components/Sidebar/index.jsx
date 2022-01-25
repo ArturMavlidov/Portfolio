@@ -6,7 +6,6 @@ import sidebarAvatar from "../../assets/img/sidebarLogo.png";
 
 const Sidebar = memo(() => {
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
     <div className={styles.sidebar}>

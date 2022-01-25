@@ -1,3 +1,35 @@
 .home {
+  position: relative;
+  color: #fff;
   background-image: url(../../assets/img/home.jpg);
+}
+
+.home_content {
+  margin-top: 163px;
+  margin-left: 199px;
+}
+
+.fragment {
+  font-size: 24px;
+}
+
+.greeting {
+  position: relative;
+  top: 5px;
+  left: 27px;
+}
+
+.greeting img {
+  position: relative;
+  top: 10px;
+}
+
+.name {
+  margin-left: 27px;
+  font-size: 64px;
+  line-height: 1.04;
+}
+
+.name span {
+  color: #DE8181;
 }

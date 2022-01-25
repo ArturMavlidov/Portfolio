@@ -1,0 +1,39 @@
+.page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.page_name {
+  margin-left: 53px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.page_name:after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 7px;
+  left: -50px;
+  width: 175px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.page_button {
+  padding: 12px 30px;
+
+  box-shadow: 0 4px 1px rgba(0, 0, 0, 0.25);
+  background-color: #01A39D;
+  border-radius: 10px;
+
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.page_button img {
+  margin-left: 10px;
+}
