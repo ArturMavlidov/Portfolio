@@ -1,12 +1,22 @@
 .home {
   position: relative;
   color: #fff;
-  background-image: url(../../assets/img/home.jpg);
+  background:  url(../../assets/img/home.jpg) center top;
 }
 
 .home_content {
   margin-top: 163px;
   margin-left: 199px;
+
+  @media (max-width: 1230px) {
+    margin-left: 150px;
+  }
+
+  @media (max-width: 1175px) {
+    margin-left: 120px;
+  }
+
+
 }
 
 .fragment {
@@ -17,6 +27,10 @@
   position: relative;
   top: 5px;
   left: 27px;
+
+  @media (max-width: 1345px) {
+    left: 20px;
+  }
 }
 
 .greeting img {
@@ -28,6 +42,19 @@
   margin-left: 27px;
   font-size: 64px;
   line-height: 1.04;
+
+  @media (max-width: 1345px) {
+    margin-left: 20px;
+    font-size: 52px;
+  }
+
+  @media (max-width: 1150px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 1110px) {
+    font-size: 44px;
+  }
 }
 
 .name span {
