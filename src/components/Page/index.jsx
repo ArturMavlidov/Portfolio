@@ -1,18 +1,18 @@
 import React, { memo } from "react";
 
-import { PageHeader } from "../index";
+import { PageHeader, Button } from "../index";
 
 import styles from "./index.module.scss";
-import buttonIcon from "../../assets/img/button-icon.svg";
+import { ReactComponent as ButtonIcon } from "../../assets/img/button-icon.svg";
 
-const Page = memo(({ cn, pageName, link = '/', children }) => {
+const Page = memo(({ className, pageName, link = "/", children }) => {
   return (
-    <div className={`${styles.page} ${cn}`}>
+    <div className={`${styles.page} ${className}`}>
       <PageHeader link={link}>{pageName}</PageHeader>
-      <div className={styles.home_content}>{children}</div>
-        <button className={styles.page_btn}>
-          Download Cv <img src={buttonIcon} alt="Button icon" />
-        </button>
+      <div>{children}</div>
+      <Button className={styles.pageBtn}>
+        Download Cv <ButtonIcon className={styles.pageBtnIcon} />
+      </Button>
     </div>
   );
 });

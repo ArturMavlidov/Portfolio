@@ -1,24 +1,24 @@
 import React, { memo } from "react";
-import { Page } from '../../components';
+import { Page } from "../../components";
 
-import manIcon from '../../assets/img/man-icon.svg';
-import homeIcon from '../../assets/img/home-icon.svg';
+import { ReactComponent as ManIcon } from "../../assets/img/man-icon.svg";
+import { ReactComponent as HomeIcon } from "../../assets/img/home-icon.svg";
 
 import styles from "./index.module.scss";
 
 const Home = memo(() => {
   return (
-    <Page cn={styles.home} pageName="Home" link={"/about"}>
-      <div className={styles.home_content}>
+    <Page className={styles.home} pageName="Home" link={"/about"}>
+      <div className={styles.homeContent}>
         <span className={styles.fragment}>{`<Fragment>`}</span> <br />
         <span className={styles.greeting}>
-          HI THERE <img src={manIcon} alt="Man icon" />, I'M
+          HI THERE <ManIcon className={styles.greetingIcon} />, I'M
         </span>
         <div className={styles.name}>
           artur.
           <br />
           <span>
-            Frontend Developer <img src={homeIcon} alt="Man icon" />
+            Frontend Developer <HomeIcon />
           </span>
         </div>
         <span className={styles.fragment}>{`</Fragment>`}</span>

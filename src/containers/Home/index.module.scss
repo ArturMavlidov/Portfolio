@@ -1,10 +1,10 @@
 .home {
   position: relative;
   color: #fff;
-  background:  url(../../assets/img/home.jpg) center top;
+  background: url(../../assets/img/home.jpg) center top;
 }
 
-.home_content {
+.homeContent {
   margin-top: 163px;
   margin-left: 199px;
 
@@ -15,8 +15,6 @@
   @media (max-width: 1175px) {
     margin-left: 120px;
   }
-
-
 }
 
 .fragment {
@@ -33,9 +31,9 @@
   }
 }
 
-.greeting img {
+.greetingIcon {
   position: relative;
-  top: 10px;
+  top: 9px;
 }
 
 .name {
@@ -58,5 +56,5 @@
 }
 
 .name span {
-  color: #DE8181;
+  color: #de8181;
 }

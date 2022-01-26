@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
 
+  min-width: 325px;
   max-width: 400px;
   max-height: 792px;
   padding: 30px 43px;
@@ -15,29 +16,25 @@
   color: #fff;
 }
 
-.sidebar_avatar {
-  margin: 0 auto;
-}
-
-.sidebar_name {
+.sidebarInformation {
   padding: 21px;
   margin: 15px 0 35px;
-  background-color: #324A5E;
+  background-color: #324a5e;
   border-radius: 10px;
   text-align: center;
 }
 
-.sidebar_prof {
+.sidebarProf {
   margin-top: 10px;
   text-transform: uppercase;
 }
 
-.sidebar_nav {
+.sidebarNav {
   margin-bottom: 158px;
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  color: #324A5E;
+  color: #324a5e;
 }
 
 .nav_item:not(:last-child) {
@@ -45,10 +42,10 @@
 }
 
 .active {
-  color: #01A39D;
+  color: #01a39d;
 }
 
-.sidebar_date {
+.sidebarDate {
   text-align: center;
-  color: #324A5E;
+  color: #324a5e;
 }
