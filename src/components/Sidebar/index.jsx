@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { pagesPathnames } from "../../utils";
+import { mapPagesToPath } from "../../utils";
 
 import styles from "./index.module.scss";
 import avatar from "../../assets/img/sidebarLogo.png";
@@ -21,14 +21,15 @@ const Sidebar = memo(() => {
       <nav className={styles.sidebarNav}>
         <ul>
           {
-            pagesPathnames.map(page => {
+            Object.keys(mapPagesToPath).map(page => {
               return (
                 <li
                   className={`${styles.nav_item} ${
-                    pathname === page ? styles.active : null
-                  }`} key={page}
+                    pathname === mapPagesToPath[page] ? styles.active : null
+                  }`}
+                  key={page}
                 >
-                  <Link to={page}>{page === '/' ? 'Home' : page.slice(1)}</Link>
+                  <Link to={mapPagesToPath[page]}>{page}</Link>
                 </li>
               );
             })
