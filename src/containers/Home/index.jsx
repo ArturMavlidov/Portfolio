@@ -18,7 +18,8 @@ const Home = memo(() => {
           artur.
           <br />
           <span>
-            Frontend Developer <HomeIcon />
+            Frontend Developer
+            <HomeIcon className={styles.homeIcon} />
           </span>
         </div>
         <span className={styles.fragment}>{`</Fragment>`}</span>

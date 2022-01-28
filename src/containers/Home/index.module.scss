@@ -1,24 +1,42 @@
 .home {
   position: relative;
   color: #fff;
-  background: url(../../assets/img/home.jpg) center top;
+  background: url(../../assets/img/home.jpg) center top no-repeat;
+  background-size: cover;
 }
 
 .homeContent {
-  margin-top: 163px;
-  margin-left: 199px;
+  min-width: 680px;
 
-  @media (max-width: 1230px) {
-    margin-left: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+
+  @media (max-width: 1345px) {
+    min-width: 560px;
   }
 
-  @media (max-width: 1175px) {
-    margin-left: 120px;
+  @media (max-width: 1150px) {
+    min-width: 520px;
+  }
+
+  @media (max-width: 1110px) {
+    min-width: 490px;
   }
 }
 
 .fragment {
   font-size: 24px;
+
+  &:last-child {
+    position: relative;
+    top: -3px;
+
+    @media (max-width: 1110px) {
+      top: -6px;
+    }
+  }
 }
 
 .greeting {
@@ -42,7 +60,6 @@
   line-height: 1.04;
 
   @media (max-width: 1345px) {
-    margin-left: 20px;
     font-size: 52px;
   }
 
@@ -56,5 +73,15 @@
 }
 
 .name span {
+  position: relative;
+  top: -6px;
   color: #de8181;
+
+  @media (max-width: 1110px) {
+    top: -12px;
+  }
+}
+
+.homeIcon {
+  margin-left: 25px;
 }
