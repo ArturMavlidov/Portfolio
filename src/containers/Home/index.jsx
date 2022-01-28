@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 
 const Home = memo(() => {
   return (
-    <Page className={styles.home} pageName="Home" link={"/about"}>
+    <Page className={styles.home} pageName="Home">
       <div className={styles.homeContent}>
         <span className={styles.fragment}>{`<Fragment>`}</span> <br />
         <span className={styles.greeting}>
