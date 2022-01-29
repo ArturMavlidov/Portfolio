@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { gsap } from "gsap";
 
 import { mapPagesToPath } from "../../utils";
 

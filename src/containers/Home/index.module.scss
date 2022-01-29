@@ -1,4 +1,5 @@
 .home {
+  overflow: hidden;
   position: relative;
   color: #fff;
   background: url(../../assets/img/home.jpg) center top no-repeat;
@@ -27,6 +28,7 @@
 }
 
 .fragment {
+  display: inline-block;
   font-size: 24px;
 
   &:last-child {
@@ -50,6 +52,7 @@
 }
 
 .greetingIcon {
+  margin-left: 8px;
   position: relative;
   top: 9px;
 }
@@ -73,6 +76,10 @@
 }
 
 .name span {
+
+}
+
+.prof {
   position: relative;
   top: -6px;
   color: #de8181;

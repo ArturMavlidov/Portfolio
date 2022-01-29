@@ -11,14 +11,15 @@
   text-transform: uppercase;
 }
 
-.pageName:after {
-  content: "";
+.pageNameLine {
   display: block;
-  position: relative;
-  top: 7px;
-  left: -50px;
   width: 175px;
   height: 1px;
+
+  position: relative;
+  left: -50px;
+  top: 7px;
+
   background-color: #fff;
 }
 
@@ -27,6 +28,11 @@
 
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #01a39d;
+
+  // &:hover {
+  //   background-color: darken(#01a39d, 5%);
+  //   transition: 0.3s linear;
+  // }
 }
 
 .pageButtonIcon {
