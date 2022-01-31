@@ -12,18 +12,20 @@ const PageHeader = memo(({ children }) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
 
+  console.log(styles);
+
   useEffect(() => {
-    gsap.from(q(".Button_button__yIOfm"), {
+    gsap.from(q(`.${styles.pageHeaderButton}`), {
       x: "500px",
       delay: 0.2,
     });
 
-    gsap.from(q(".PageHeader_pageName__OyxMp"), {
+    gsap.from(q(`.${styles.pageName}`), {
       opacity: 0,
       delay: 0.2,
     });
 
-    gsap.from(q(".PageHeader_pageNameLine__9ar8O"), {
+    gsap.from(q(`.${styles.pageNameLine}`), {
       width: "0",
       delay: 0.2,
     });

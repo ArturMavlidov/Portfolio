@@ -19,6 +19,10 @@ const Home = memo(() => {
   useEffect(() => {
     tl.current = gsap
       .timeline()
+      .from(q("[data-role=animate-fragment]"), {
+        y: "-30px",
+        opacity: 0
+      })
       .to(q("[data-role=animate-greet]"), {
         text: "HI THERE",
         duration: 0.2,
@@ -43,11 +47,9 @@ const Home = memo(() => {
         scale: 0,
         duration: 0.3,
       })
-      .from(q("[data-role=animate-fragment]"), {
-        y: "-500px",
-      })
       .from(q("[data-role=animate-fragment_1]"), {
-        y: "500px",
+        y: "30px",
+        opacity: 0
       }, "<");
   }, []);
 

@@ -11,9 +11,9 @@ const Page = memo(({ className, pageName, children }) => {
   const q = gsap.utils.selector(el);
 
   useEffect(() => {
-    gsap.from(q(".Page_pageBtn__Kso5l"), {
+    gsap.from(q(".Page_pageBtn__OKIRE"), {
       x: "-500px",
-      delay: 0.2
+      delay: 0.2,
     });
   }, []);
 
