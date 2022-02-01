@@ -11,6 +11,10 @@
   text-transform: uppercase;
 }
 
+.pageNameDark {
+  color: #334a5d;
+}
+
 .pageNameLine {
   display: block;
   width: 175px;
@@ -23,16 +27,22 @@
   background-color: #fff;
 }
 
+.pageNameLineDark {
+  background-color: #334a5d;
+}
+
 .pageHeaderButton {
   padding: 0 30px;
 
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #01a39d;
+  transition: 0.3s ease;
 
-  // &:hover {
-  //   background-color: darken(#01a39d, 5%);
-  //   transition: 0.3s linear;
-  // }
+  z-index: 1;
+
+  &:hover {
+    background-color: darken(#01a39d, 5%);
+  }
 }
 
 .pageButtonIcon {

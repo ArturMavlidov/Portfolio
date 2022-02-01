@@ -54,7 +54,7 @@ const Home = memo(() => {
   }, []);
 
   return (
-    <Page className={styles.home} pageName="Home">
+    <Page pageClass={styles.home} pageName="Home">
       <div className={styles.homeContent} ref={el}>
         <span
           className={styles.fragment}

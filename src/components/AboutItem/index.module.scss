@@ -1,0 +1,45 @@
+.aboutContentEl {
+  width: 33%;
+  min-width: 211px;
+  height: 190px;
+  background-color: #fff;
+
+  position: relative;
+}
+
+.aboutContentItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+  border: 1px solid #324A5E;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+
+  text-align: center;
+  background-color: #fff;
+
+  span {
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.aboutContentBg {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  z-index: 1;
+  border: 1px solid #324A5E;
+
+  background-color: #fff;
+}

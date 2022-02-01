@@ -1,0 +1,32 @@
+.aboutContent {
+  width: 65%;
+  margin: 0 auto;
+
+  position: relative;
+  top: -75px;
+
+  @media (max-width: 1225px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1180px) {
+    width: 75%;
+  }
+}
+
+.aboutContentRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutContentRow:not(:last-child) {
+  margin-bottom: 190px;
+
+  @media (max-height: 900px) {
+    margin-bottom: 140px;
+  }
+
+  @media (max-height: 845px) {
+    margin-bottom: 100px;
+  }
+}

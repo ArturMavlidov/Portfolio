@@ -8,11 +8,9 @@ import { Button } from "../index";
 import { ReactComponent as ArrowIcon } from "../../assets/img/arrow-right.svg";
 import styles from "./index.module.scss";
 
-const PageHeader = memo(({ children }) => {
+const PageHeader = memo(({ children, isDark }) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
-
-  console.log(styles);
 
   useEffect(() => {
     gsap.from(q(`.${styles.pageHeaderButton}`), {
@@ -33,9 +31,9 @@ const PageHeader = memo(({ children }) => {
 
   return (
     <div className={styles.pageHeader} ref={el}>
-      <div className={styles.pageName}>
+      <div className={`${styles.pageName} ${isDark && styles.pageNameDark}`}>
         {children}
-        <span className={styles.pageNameLine}></span>
+        <span className={`${styles.pageNameLine} ${isDark && styles.pageNameLineDark}`}></span>
       </div>
       <Link to={getNextPage(children)}>
         <Button className={`${styles.pageHeaderButton}`}>
