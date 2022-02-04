@@ -10,8 +10,8 @@ import { ReactComponent as HomeIcon } from "../../assets/img/home-icon.svg";
 import styles from "./index.module.scss";
 
 const Home = memo(() => {
-  const el = useRef();
   const tl = useRef();
+  const el = useRef();
   const q = gsap.utils.selector(el);
 
   gsap.registerPlugin(TextPlugin);
@@ -54,7 +54,7 @@ const Home = memo(() => {
   }, []);
 
   return (
-    <Page pageClass={styles.home} pageName="Home">
+    <Page pageClass={styles.home} pageName="Home" animate>
       <div className={styles.homeContent} ref={el}>
         <span
           className={styles.fragment}

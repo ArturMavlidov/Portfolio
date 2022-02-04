@@ -8,11 +8,11 @@ import { Button } from "../index";
 import { ReactComponent as ArrowIcon } from "../../assets/img/arrow-right.svg";
 import styles from "./index.module.scss";
 
-const PageHeader = memo(({ children, isDark }) => {
+const PageHeader = memo(({ children, isDark, animate }) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
 
-  useEffect(() => {
+  const animateHeader = () => {
     gsap.from(q(`.${styles.pageHeaderButton}`), {
       x: "500px",
       delay: 0.2,
@@ -27,6 +27,10 @@ const PageHeader = memo(({ children, isDark }) => {
       width: "0",
       delay: 0.2,
     });
+  }
+
+  useEffect(() => {
+    animate && animateHeader();
   }, []);
 
   return (

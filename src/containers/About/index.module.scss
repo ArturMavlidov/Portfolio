@@ -2,6 +2,38 @@
   background-color: #fafafa;
 }
 
+.aboutContent {
+  width: 65%;
+  margin: 55px auto 0;
+
+  position: relative;
+
+  @media (max-width: 1225px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1180px) {
+    width: 75%;
+  }
+}
+
+.aboutContentRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutContentRow:not(:last-child) {
+  margin-bottom: 190px;
+
+  @media (max-height: 900px) {
+    margin-bottom: 140px;
+  }
+
+  @media (max-height: 845px) {
+    margin-bottom: 100px;
+  }
+}
+
 .sassIcon {
   display: inline-block;
   position: relative;
@@ -9,10 +41,20 @@
   left: 25px;
 
   svg {
-    @media (max-width: 1200px) {
-      width: 70px;
+    position: relative;
 
-      position: relative;
+    @media (max-width: 1500px) {
+      width: 90px;
+    }
+
+    @media (max-width: 1250px) {
+      width: 70px;
+      left: -15px;
+    }
+
+    @media (max-width: 1160px) {
+      width: 70px;
+      top: -15px;
       left: -30px;
     }
   }
