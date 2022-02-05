@@ -5,15 +5,10 @@
 .aboutContent {
   width: 65%;
   margin: 55px auto 0;
-
   position: relative;
 
-  @media (max-width: 1225px) {
-    width: 70%;
-  }
-
-  @media (max-width: 1180px) {
-    width: 75%;
+  @media (max-width: 1325px) {
+    width: 100%;
   }
 }
 
@@ -32,38 +27,4 @@
   @media (max-height: 845px) {
     margin-bottom: 100px;
   }
-}
-
-.sassIcon {
-  display: inline-block;
-  position: relative;
-  top: 10px;
-  left: 25px;
-
-  svg {
-    position: relative;
-
-    @media (max-width: 1500px) {
-      width: 90px;
-    }
-
-    @media (max-width: 1250px) {
-      width: 70px;
-      left: -15px;
-    }
-
-    @media (max-width: 1160px) {
-      width: 70px;
-      top: -15px;
-      left: -30px;
-    }
-  }
-}
-
-.reactIcon {
-  position: absolute;
-  right: 0;
-  bottom: 0px;
-
-  z-index: 0;
 }

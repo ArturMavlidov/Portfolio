@@ -1,20 +1,25 @@
-import React, { useRef, useEffect, memo } from "react";
+import React, { useRef, useState, useEffect, memo } from "react";
 import gsap from "gsap";
 
 import { Page } from "../../components";
 import { AboutItem } from "./components";
 
 import styles from "./index.module.scss";
-import { ReactComponent as SassIcon } from "../../assets/img/sass-icon.svg";
 import { ReactComponent as EducationIcon } from "../../assets/img/education-icon.svg";
 import { ReactComponent as ExperienceIcon } from "../../assets/img/experience-icon.svg";
 import { ReactComponent as ExperienceIcon2 } from "../../assets/img/experience2-icon.svg";
 import { ReactComponent as SkillsIcon } from "../../assets/img/skills-icon.svg";
 
 const About = memo(() => {
-  const tl = useRef();
-  const el = useRef();
+  const tl = useRef(null);
+  const el = useRef(null);
   const q = gsap.utils.selector(el);
+
+  const [isAnimate, setIsAnimate] = useState(true);
+
+  const setAnimate = () => {
+    setIsAnimate(!isAnimate);
+  };
 
   useEffect(() => {
     tl.current = gsap
@@ -23,21 +28,25 @@ const About = memo(() => {
         opacity: 0,
         x: "100%",
         y: "100%",
+        duration: 0.35
       })
       .from(q("[data-role=animate_2]"), {
         opacity: 0,
         x: "-100%",
         y: "100%",
+        duration: 0.35
       })
       .from(q("[data-role=animate_3]"), {
         opacity: 0,
         x: "100%",
         y: "-100%",
+        duration: 0.35
       })
       .from(q("[data-role=animate_4]"), {
         opacity: 0,
         x: "-100%",
         y: "-100%",
+        duration: 0.35
       });
   }, []);
 
@@ -49,11 +58,19 @@ const About = memo(() => {
             itemName="Education"
             icon={<EducationIcon />}
             dataRole="animate_1"
+            isAnimate={isAnimate}
+            setAnimate={setAnimate}
+            top={0}
+            left={0}
           />
           <AboutItem
             itemName="Experience"
             icon={<ExperienceIcon />}
             dataRole="animate_2"
+            isAnimate={isAnimate}
+            setAnimate={setAnimate}
+            top={0}
+            right={-15}
           />
         </div>
         <div className={styles.aboutContentRow}>
@@ -61,11 +78,19 @@ const About = memo(() => {
             itemName="Skills"
             icon={<SkillsIcon />}
             dataRole="animate_3"
+            bottom={-15}
+            left={0}
+            isAnimate={isAnimate}
+            setAnimate={setAnimate}
           />
           <AboutItem
             itemName="Experience"
             icon={<ExperienceIcon2 />}
             dataRole="animate_4"
+            bottom={-15}
+            right={-15}
+            isAnimate={isAnimate}
+            setAnimate={setAnimate}
           />
         </div>
       </div>
