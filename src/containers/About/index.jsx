@@ -1,6 +1,10 @@
 import React, { useRef, useState, useEffect, memo } from "react";
 import gsap from "gsap";
 
+import store from '../../redux/store';
+import { setAnimate } from '../../redux/reducers/about';
+
+
 import { Page } from "../../components";
 import { AboutItem } from "./components";
 
@@ -15,11 +19,9 @@ const About = memo(() => {
   const el = useRef(null);
   const q = gsap.utils.selector(el);
 
-  const [isAnimate, setIsAnimate] = useState(false);
-
-  const setAnimate = () => {
-    setIsAnimate(!isAnimate);
-  };
+  const setisAnimate = () => {
+    store.dispatch(setAnimate());
+  }
 
   const startAnimation = () => {
     tl.current = gsap
@@ -47,7 +49,7 @@ const About = memo(() => {
         x: "-100%",
         y: "-100%",
         duration: 0.35,
-        onComplete: setAnimate,
+        onComplete: setisAnimate,
       });
   }
 
@@ -63,8 +65,6 @@ const About = memo(() => {
             itemName="Education"
             icon={<EducationIcon />}
             dataRole="animate_1"
-            isAnimate={isAnimate}
-            setAnimate={setAnimate}
             top={0}
             left={0}
           />
@@ -72,8 +72,6 @@ const About = memo(() => {
             itemName="Experience"
             icon={<ExperienceIcon />}
             dataRole="animate_2"
-            isAnimate={isAnimate}
-            setAnimate={setAnimate}
             top={0}
             right={-15}
           />
@@ -83,8 +81,6 @@ const About = memo(() => {
             itemName="Skills"
             icon={<SkillsIcon />}
             dataRole="animate_3"
-            isAnimate={isAnimate}
-            setAnimate={setAnimate}
             left={0}
             bottom={-15}
           />
@@ -92,8 +88,6 @@ const About = memo(() => {
             itemName="Experience"
             icon={<ExperienceIcon2 />}
             dataRole="animate_4"
-            isAnimate={isAnimate}
-            setAnimate={setAnimate}
             right={-15}
             bottom={-15}
           />
