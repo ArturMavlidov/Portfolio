@@ -1,22 +1,19 @@
 import React, { memo, useRef } from 'react';
 import gsap from 'gsap';
 
-import store from "../../../../redux/store";
 import { setAnimate } from "../../../../redux/reducers/about";
 
 import styles from './index.module.scss'
 
 const AboutItem = memo((props) => {
-  const {icon, itemName, top = '', right = '', bottom = '', left = '', dataRole } = props;
+  const { icon, itemName, top, right, bottom, left, dataRole, dispatch, isAnimate } = props;
 
   const tl = useRef(null);
   const el = useRef(null);
   const q = gsap.utils.selector(el);
 
-  const getAnimateStatus = () => store.getState().about.isAnimate;
-
   const handleMouseEnter = () => {
-    store.dispatch(setAnimate());
+    dispatch(setAnimate());
 
     tl.current = gsap
       .timeline()
@@ -49,7 +46,7 @@ const AboutItem = memo((props) => {
   return (
     <div
       className={styles.aboutContentEl}
-      onMouseEnter={getAnimateStatus() ? handleMouseEnter : null}
+      onMouseEnter={isAnimate ? handleMouseEnter : null}
       data-role={dataRole}
       ref={el}
     >
