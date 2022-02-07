@@ -15,39 +15,44 @@ const About = memo(() => {
   const el = useRef(null);
   const q = gsap.utils.selector(el);
 
-  const [isAnimate, setIsAnimate] = useState(true);
+  const [isAnimate, setIsAnimate] = useState(false);
 
   const setAnimate = () => {
     setIsAnimate(!isAnimate);
   };
 
-  useEffect(() => {
+  const startAnimation = () => {
     tl.current = gsap
       .timeline()
       .from(q("[data-role=animate_1]"), {
         opacity: 0,
         x: "100%",
         y: "100%",
-        duration: 0.35
+        duration: 0.35,
       })
       .from(q("[data-role=animate_2]"), {
         opacity: 0,
         x: "-100%",
         y: "100%",
-        duration: 0.35
+        duration: 0.35,
       })
       .from(q("[data-role=animate_3]"), {
         opacity: 0,
         x: "100%",
         y: "-100%",
-        duration: 0.35
+        duration: 0.35,
       })
       .from(q("[data-role=animate_4]"), {
         opacity: 0,
         x: "-100%",
         y: "-100%",
-        duration: 0.35
+        duration: 0.35,
+        onComplete: setAnimate,
       });
+  }
+
+  useEffect(() => {
+    startAnimation();
   }, []);
 
   return (
@@ -78,19 +83,19 @@ const About = memo(() => {
             itemName="Skills"
             icon={<SkillsIcon />}
             dataRole="animate_3"
-            bottom={-15}
-            left={0}
             isAnimate={isAnimate}
             setAnimate={setAnimate}
+            left={0}
+            bottom={-15}
           />
           <AboutItem
             itemName="Experience"
             icon={<ExperienceIcon2 />}
             dataRole="animate_4"
-            bottom={-15}
-            right={-15}
             isAnimate={isAnimate}
             setAnimate={setAnimate}
+            right={-15}
+            bottom={-15}
           />
         </div>
       </div>

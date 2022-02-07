@@ -44,7 +44,7 @@ const AboutItem = memo((props) => {
   return (
     <div
       className={styles.aboutContentEl}
-      onMouseEnter={isAnimate && handleMouseEnter}
+      onMouseEnter={isAnimate ? handleMouseEnter : null}
       data-role={dataRole}
       ref={el}
     >
