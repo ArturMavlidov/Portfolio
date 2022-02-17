@@ -8,8 +8,8 @@ export const aboutSlice = createSlice({
   name: "about",
   initialState,
   reducers: {
-    setAnimate: (state) => {
-      state.isAnimate = !state.isAnimate;
+    setAnimate(state, action) {
+      state.isAnimate = action.payload || !state.isAnimate;
     },
   },
 });

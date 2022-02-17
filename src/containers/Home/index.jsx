@@ -16,12 +16,12 @@ const Home = memo(() => {
 
   gsap.registerPlugin(TextPlugin);
 
-  useEffect(() => {
+  const startAnimation = () => {
     tl.current = gsap
       .timeline()
       .from(q("[data-role=animate-fragment]"), {
         y: "-30px",
-        opacity: 0
+        opacity: 0,
       })
       .to(q("[data-role=animate-greet]"), {
         text: "HI THERE",
@@ -47,10 +47,17 @@ const Home = memo(() => {
         scale: 0,
         duration: 0.3,
       })
-      .from(q("[data-role=animate-fragment_1]"), {
-        y: "30px",
-        opacity: 0
-      }, "<");
+      .from(
+        q("[data-role=animate-fragment_1]"),
+        {
+          y: "30px",
+          opacity: 0,
+        }, "<"
+      );
+  };
+
+  useEffect(() => {
+    startAnimation();
   }, []);
 
   return (

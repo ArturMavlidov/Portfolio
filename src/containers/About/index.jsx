@@ -22,7 +22,7 @@ const About = memo(() => {
   const q = gsap.utils.selector(el);
 
   const setIsAnimate = () => {
-    dispatch(setAnimate());
+    dispatch(setAnimate(true));
   };
 
   const startAnimation = () => {
