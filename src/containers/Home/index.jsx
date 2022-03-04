@@ -52,7 +52,8 @@ const Home = memo(() => {
         {
           y: "30px",
           opacity: 0,
-        }, "<"
+        },
+        "<"
       );
   };
 
