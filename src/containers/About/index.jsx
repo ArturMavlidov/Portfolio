@@ -70,7 +70,7 @@ const About = memo(() => {
     dispatch(setContentVisible(bool));
   }
 
-  const setArrayToReverseAnimate = (arr) => {
+  const setObjToReverseAnimate = (arr) => {
     dispatch(setElementsToReverseAnimate(arr));
   };
 
@@ -126,7 +126,7 @@ const About = memo(() => {
             left={0}
             isAnimate={isAnimate}
             setIsAnimate={setIsAnimate}
-            setArrayToReverseAnimate={setArrayToReverseAnimate}
+            setObjToReverseAnimate={setObjToReverseAnimate}
             isContentVisible={isContentVisible}
             setContentVisible={setIsContentVisible}
           />
@@ -138,7 +138,7 @@ const About = memo(() => {
             right={-15}
             isAnimate={isAnimate}
             setIsAnimate={setIsAnimate}
-            setArrayToReverseAnimate={setArrayToReverseAnimate}
+            setObjToReverseAnimate={setObjToReverseAnimate}
             isContentVisible={isContentVisible}
             setContentVisible={setIsContentVisible}
           />
@@ -152,7 +152,7 @@ const About = memo(() => {
             bottom={-15}
             isAnimate={isAnimate}
             setIsAnimate={setIsAnimate}
-            setArrayToReverseAnimate={setArrayToReverseAnimate}
+            setObjToReverseAnimate={setObjToReverseAnimate}
             isContentVisible={isContentVisible}
             setContentVisible={setIsContentVisible}
           />
@@ -164,7 +164,7 @@ const About = memo(() => {
             bottom={-15}
             isAnimate={isAnimate}
             setIsAnimate={setIsAnimate}
-            setArrayToReverseAnimate={setArrayToReverseAnimate}
+            setObjToReverseAnimate={setObjToReverseAnimate}
             isContentVisible={isContentVisible}
             setContentVisible={setIsContentVisible}
           />

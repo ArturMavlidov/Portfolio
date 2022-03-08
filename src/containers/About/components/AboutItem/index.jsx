@@ -15,7 +15,7 @@ const AboutItem = memo((props) => {
     dataRole,
     isAnimate,
     setIsAnimate,
-    setArrayToReverseAnimate,
+    setObjToReverseAnimate,
     isContentVisible,
     setContentVisible,
   } = props;
@@ -27,7 +27,10 @@ const AboutItem = memo((props) => {
 
   const handleContentVisible = () => {
     setContentVisible(true);
-    setArrayToReverseAnimate([el.current, bg.current]);
+    setObjToReverseAnimate({
+      item: el.current,
+      itemBg: bg.current
+    });
   };
 
   useEffect(() => {

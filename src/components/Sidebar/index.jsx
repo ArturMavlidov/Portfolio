@@ -25,7 +25,7 @@ const Sidebar = memo(() => {
               return (
                 <li
                   className={`${styles.nav_item} ${
-                    pathname === mapPagesToPath[page] ? styles.active : null
+                    pathname === mapPagesToPath[page] ? styles.active : ''
                   }`}
                   key={page}
                 >

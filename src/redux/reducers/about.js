@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isAnimate: false,
   isContentVisible: false,
-  elementsToReverseAnimate: [],
+  elementsToReverseAnimate: {},
 };
 
 export const aboutSlice = createSlice({
@@ -25,7 +25,7 @@ export const aboutSlice = createSlice({
     setElementsToReverseAnimate(state, {payload}) {
       return {
         ...state,
-        elementsToReverseAnimate: [...payload]
+        elementsToReverseAnimate: {...payload}
       };
     },
     setContentVisible(state, {payload}) {
