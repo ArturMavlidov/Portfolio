@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isAnimate: false,
-  isContentVisible: false,
+  isContentVisible: {
+    education: false,
+    goals: false,
+    skills: false,
+    experience: false,
+  },
   elementsToReverseAnimate: {},
 };
 
@@ -31,14 +36,24 @@ export const aboutSlice = createSlice({
     setContentVisible(state, {payload}) {
       return {
         ...state,
-        isContentVisible: payload
+        isContentVisible: {...state.isContentVisible, ...payload}
       }
+    },
+    disallowContentVisible(state) {
+      return {
+        ...state,
+        isContentVisible: { education: false, goals: false, skills: false, experience: false },
+      };
     }
   },
 });
 
-export const { setAnimate, setElementsToReverseAnimate, setContentVisible } =
-  aboutSlice.actions;
+export const {
+  setAnimate,
+  setElementsToReverseAnimate,
+  setContentVisible,
+  disallowContentVisible,
+} = aboutSlice.actions;
 
 
 export default aboutSlice.reducer;

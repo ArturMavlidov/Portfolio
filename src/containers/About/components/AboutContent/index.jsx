@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setAnimate,
-  setContentVisible,
+  disallowContentVisible,
 } from "../../../../redux/reducers/about";
 
 import styles from "./index.module.scss";
@@ -15,6 +15,7 @@ const AboutContent = memo(({ children, icon }) => {
   const elementsToReverseAnimate = useSelector(
     ({ about }) => about.elementsToReverseAnimate
   );
+
   const dispatch = useDispatch();
 
   const revertAnimate = () => {
@@ -42,11 +43,12 @@ const AboutContent = memo(({ children, icon }) => {
         height: "190px",
         ease: "elastic.out(1, 0.3)",
         position: "static",
-        zIndex: 10,
+        zIndex: 2,
         duration: 0.6,
+        onComplete: () => dispatch(setAnimate())
       });
-    dispatch(setAnimate());
-    dispatch(setContentVisible(false));
+
+    dispatch(disallowContentVisible(false));
   };
 
   return (

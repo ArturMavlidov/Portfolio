@@ -26,7 +26,7 @@ const AboutItem = memo((props) => {
   const bg = useRef(null);
 
   const handleContentVisible = () => {
-    setContentVisible(true);
+    setContentVisible({[itemName.toLowerCase()]: true});
     setObjToReverseAnimate({
       item: el.current,
       itemBg: bg.current
@@ -96,7 +96,7 @@ const AboutItem = memo((props) => {
         <span>{itemName}</span>
       </div>
       <div className={styles.aboutContentBg} ref={bg}>
-        {isContentVisible && content()}
+        {isContentVisible[itemName.toLowerCase()] && content()}
       </div>
     </div>
   );

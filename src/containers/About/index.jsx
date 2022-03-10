@@ -2,16 +2,21 @@ import React, { useRef, useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import gsap from "gsap";
 
-import { setAnimate, setElementsToReverseAnimate, setContentVisible } from "../../redux/reducers/about";
+import {
+  setAnimate,
+  setElementsToReverseAnimate,
+  setContentVisible,
+} from "../../redux/reducers/about";
 
 import { Page } from "../../components";
-import { AboutItem, AboutContent } from "./components";
+import { AboutItem, AboutContent, SkillsItem } from "./components";
 
 import styles from "./index.module.scss";
 import { ReactComponent as EducationIcon } from "../../assets/img/education-icon.svg";
+import { ReactComponent as Goals } from "../../assets/img/goals-icon.svg";
 import { ReactComponent as ExperienceIcon } from "../../assets/img/experience-icon.svg";
-import { ReactComponent as ExperienceIcon2 } from "../../assets/img/experience2-icon.svg";
 import { ReactComponent as SkillsIcon } from "../../assets/img/skills-icon.svg";
+import { ReactComponent as HtmlIcon } from "../../assets/img/html-icon.svg";
 
 const About = memo(() => {
   const dispatch = useDispatch();
@@ -22,6 +27,7 @@ const About = memo(() => {
   const q = gsap.utils.selector(el);
 
   const renderEducation = () => {
+
     return (
       <AboutContent icon={<EducationIcon />}>
         <div className={styles.aboutEducationInfo}>
@@ -60,15 +66,26 @@ const About = memo(() => {
         </div>
       </AboutContent>
     );
-  }
+  };
+  const renderSkills = () => {
+    return (
+      <AboutContent icon={<SkillsIcon />}>
+        <SkillsItem
+          strokeColor="#F16529"
+          icon={<HtmlIcon className={styles.skillsIconImg} />}
+          percent={70}
+        />
+      </AboutContent>
+    );
+  };
 
   const setIsAnimate = () => {
-    dispatch(setAnimate())
+    dispatch(setAnimate());
   };
 
   const setIsContentVisible = (bool) => {
     dispatch(setContentVisible(bool));
-  }
+  };
 
   const setObjToReverseAnimate = (arr) => {
     dispatch(setElementsToReverseAnimate(arr));
@@ -106,11 +123,11 @@ const About = memo(() => {
 
   useEffect(() => {
     // startAnimation();
-    setIsAnimate()
+    setIsAnimate();
 
     return () => {
       dispatch(setContentVisible(false));
-    }
+    };
   }, []);
 
   return (
@@ -131,8 +148,8 @@ const About = memo(() => {
             setContentVisible={setIsContentVisible}
           />
           <AboutItem
-            itemName="Experience"
-            icon={<ExperienceIcon />}
+            itemName="Goals"
+            icon={<Goals />}
             dataRole="animate_2"
             top={0}
             right={-15}
@@ -147,6 +164,7 @@ const About = memo(() => {
           <AboutItem
             itemName="Skills"
             icon={<SkillsIcon />}
+            content={renderSkills}
             dataRole="animate_3"
             left={0}
             bottom={-15}
@@ -158,7 +176,7 @@ const About = memo(() => {
           />
           <AboutItem
             itemName="Experience"
-            icon={<ExperienceIcon2 />}
+            icon={<ExperienceIcon />}
             dataRole="animate_4"
             right={-15}
             bottom={-15}

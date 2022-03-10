@@ -2,6 +2,7 @@
   display: flex;
   margin-bottom: 28px;
   padding: 25px 25px 0;
+  position: relative;
 }
 
 .goBack {
@@ -23,6 +24,8 @@
 }
 
 .aboutContentHeaderIcon {
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
