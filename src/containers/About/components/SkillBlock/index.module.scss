@@ -1,0 +1,71 @@
+.skillEl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  padding: 20px 0;
+
+  @media (max-width: 1125px) {
+    width: 32%;
+  }
+}
+
+.skillBlock {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  opacity: 1;
+}
+
+.progressRingCircle{
+  transform-origin: center;
+  transform: scale(1, -1) rotate(90deg);
+  transition: stroke-dashoffset 0.3s;
+}
+
+.skillBlockIcon {
+  position: absolute;
+  animation: skill 1s ease-in-out;
+}
+
+.skillDesc {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 16px;
+  color: #000;
+  opacity: 1;
+
+  @media (max-width: 1700px) {
+    margin-top: 5px;
+  }
+
+  @media (max-width: 1645px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 1325px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 1175px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 1085px) {
+    font-size: 12px;
+  }
+}
+
+@keyframes skill {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

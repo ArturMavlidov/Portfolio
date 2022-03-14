@@ -1,12 +1,11 @@
-.skillsItem {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.skillsContainer {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 35px;
 }
 
-.progressRingCircle{
-  transform-origin: center;
-  transform: rotate(-90deg);
-  transition: stroke-dashoffset 0.3s;
+.skillsItem {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

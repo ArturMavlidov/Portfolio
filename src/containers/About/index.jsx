@@ -9,7 +9,7 @@ import {
 } from "../../redux/reducers/about";
 
 import { Page } from "../../components";
-import { AboutItem, AboutContent, SkillsItem } from "./components";
+import { AboutItem, AboutContent, EducationItem, SkillsItem } from "./components";
 
 import styles from "./index.module.scss";
 import { ReactComponent as EducationIcon } from "../../assets/img/education-icon.svg";
@@ -25,59 +25,6 @@ const About = memo(() => {
   const tl = useRef(null);
   const el = useRef(null);
   const q = gsap.utils.selector(el);
-
-  const renderEducation = () => {
-
-    return (
-      <AboutContent icon={<EducationIcon />}>
-        <div className={styles.aboutEducationInfo}>
-          <div className={styles.aboutEducationItem}>
-            <div className={styles.aboutEducationTime}>2021г.</div>
-            <span></span>
-            <div className={styles.aboutEducationText}>
-              Even in my school years I thought about IT, I decided to develop
-              in the field of frontend. Made layouts of websites, started
-              working with pug/scss preprocessors. I took the 'Webmaster' course
-              on Hexlet. At the same time, I drew knowledge on frontend
-              development from everywhere: books, articles, YouTube, and tried
-              to develop. Constantly looked for interesting JS tasks and solved
-              them. Created pet-projects in native javascript. Took a
-              fundamental javascript course on Udemy. Started to actively
-              maintain github. Got a little commercial experience (fixing bugs
-              in scripts, layout). I have found a goal for myself - to join a
-              company where I can realize my potential, grow in it and show
-              results. I began to think about which framework to choose - React
-              or Vue, it was a difficult choice, but after studying their
-              differences, I decided without a doubt.
-            </div>
-          </div>
-          <div className={styles.aboutEducationItem}>
-            <div className={styles.aboutEducationTime}>2022г.</div>
-            <span></span>
-            <div className={styles.aboutEducationText}>
-              I chose and began to learn React and its ecosystem (redux, thunk,
-              reselect, saga, etc.). Took a React course from scratch for
-              beginners, made my projects as similar to real ones as possible
-              (component memoization, state management, asynchronous requests,
-              react-way architecture), started to learn animation with gsap and
-              felt completely ready to work as a frontend developer.
-            </div>
-          </div>
-        </div>
-      </AboutContent>
-    );
-  };
-  const renderSkills = () => {
-    return (
-      <AboutContent icon={<SkillsIcon />}>
-        <SkillsItem
-          strokeColor="#F16529"
-          icon={<HtmlIcon className={styles.skillsIconImg} />}
-          percent={70}
-        />
-      </AboutContent>
-    );
-  };
 
   const setIsAnimate = () => {
     dispatch(setAnimate());
@@ -137,7 +84,7 @@ const About = memo(() => {
           <AboutItem
             itemName="Education"
             icon={<EducationIcon />}
-            content={renderEducation}
+            Content={EducationItem}
             dataRole="animate_1"
             top={0}
             left={0}
@@ -164,7 +111,7 @@ const About = memo(() => {
           <AboutItem
             itemName="Skills"
             icon={<SkillsIcon />}
-            content={renderSkills}
+            Content={SkillsItem}
             dataRole="animate_3"
             left={0}
             bottom={-15}

@@ -46,7 +46,7 @@ const AboutContent = memo(({ children, icon }) => {
         zIndex: 2,
         duration: 0.6,
         onComplete: () => dispatch(setAnimate())
-      });
+      })
 
     dispatch(disallowContentVisible(false));
   };

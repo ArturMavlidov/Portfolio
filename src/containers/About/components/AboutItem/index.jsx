@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 
 const AboutItem = memo((props) => {
   const {
-    content = Function.prototype,
+    Content,
     icon,
     itemName,
     top,
@@ -34,6 +34,7 @@ const AboutItem = memo((props) => {
   };
 
   useEffect(() => {
+
 
     return () => {
       clearTimeout(timer.current);
@@ -96,7 +97,7 @@ const AboutItem = memo((props) => {
         <span>{itemName}</span>
       </div>
       <div className={styles.aboutContentBg} ref={bg}>
-        {isContentVisible[itemName.toLowerCase()] && content()}
+        {isContentVisible[itemName.toLowerCase()] && Content && <Content/> }
       </div>
     </div>
   );
